@@ -6,25 +6,27 @@ docker-symfony
 
 Just a little Docker POC in order to have a complete stack for running Symfony into Docker containers using docker-compose tool.
 
-# Installation
+## Installation
 
 First, clone this repository:
 
 ```bash
-$ git clone git@github.com:eko/docker-symfony.git
+git clone git@github.com:avallete/docker-symfony.git
+# Init submodule
+git submodule update --init --recursive
 ```
 
-Next, put your Symfony application into `symfony` folder and do not forget to add `symfony.dev` in your `/etc/hosts` file.
+Do not forget to add `symfony.dev` in your `/etc/hosts` file.
 
 Make sure you adjust `database_host` in `parameters.yml` to the database container alias "db"
 
 Then, run:
 
 ```bash
-$ docker-compose up
+docker-compose up
 ```
 
-You are done, you can visit your Symfony application on the following URL: `http://symfony.dev` (and access Kibana on `http://symfony.dev:81`)
+You are done, you can visit your Symfony application on the following URL: `http://symfony.dev/app.php` (and access Kibana on `http://symfony.dev:81`)
 
 _Note :_ you can rebuild all Docker images by running:
 
@@ -32,7 +34,7 @@ _Note :_ you can rebuild all Docker images by running:
 $ docker-compose build
 ```
 
-# How it works?
+## How it works?
 
 Here are the `docker-compose` built images:
 
@@ -53,17 +55,19 @@ This results in the following running containers:
         docker_php_1           php5-fpm -F                      Up      9000/tcp
 ```
 
-# Read logs
+## Read logs
 
 You can access Nginx and Symfony application logs in the following directories on your host machine:
 
 * `logs/nginx`
 * `logs/symfony`
 
-# Use Kibana!
-
-You can also use Kibana to visualize Nginx & Symfony logs by visiting `http://symfony.dev:81`.
-
-# Code license
+## Code license
 
 You are free to use the code in this repository under the terms of the 0-clause BSD license. LICENSE contains a copy of this license.
+
+# How I start the project ?
+```bash
+./install.sh
+```
+
