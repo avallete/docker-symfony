@@ -6,6 +6,9 @@ docker-symfony
 
 Just a little Docker POC in order to have a complete stack for running Symfony into Docker containers using docker-compose tool.
 
+# Requirements
+To run this full stack, you will need `docker` and `docker-composer`.
+
 ## Installation
 
 First, clone this repository:
